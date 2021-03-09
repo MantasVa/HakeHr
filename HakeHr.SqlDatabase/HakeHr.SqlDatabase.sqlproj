@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>HakeHR.SqlDatabase</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{9627d977-6fe5-4b15-985e-7699c54829b9}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.SqlAzureV12DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>HakeHR.SqlDatabase</RootNamespace>
+    <AssemblyName>HakeHR.SqlDatabase</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo" />
+    <Folder Include="dbo\Tables" />
+    <Folder Include="dbo\Stored Procedures" />
+    <Folder Include="dbo\Views" />
+    <Folder Include="dbo\Stored Procedures\Contract" />
+    <Folder Include="dbo\Stored Procedures\Employee" />
+    <Folder Include="dbo\Stored Procedures\Organization" />
+    <Folder Include="dbo\Stored Procedures\Team" />
+    <Folder Include="dbo\User Types" />
+    <Folder Include="dbo\Stored Procedures\Attachment" />
+    <Folder Include="PublishLocations" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Status.sql" />
+    <Build Include="dbo\Tables\Contract.sql" />
+    <Build Include="dbo\Tables\EmployeeContract.sql" />
+    <Build Include="dbo\Tables\Employee.sql" />
+    <Build Include="dbo\Tables\TeamEmployee.sql" />
+    <Build Include="dbo\Tables\Team.sql" />
+    <Build Include="dbo\Tables\TeamOrganization.sql" />
+    <Build Include="dbo\Tables\Organization.sql" />
+    <Build Include="dbo\Stored Procedures\Contract\usp_HakeHr_Contract_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\Contract\usp_HakeHr_Contract_GetByEmployeeId.sql" />
+    <Build Include="dbo\Stored Procedures\Contract\usp_HakeHr_Contract_GetById.sql" />
+    <Build Include="dbo\Stored Procedures\Contract\usp_HakeHr_Contract_List.sql" />
+    <Build Include="dbo\Stored Procedures\Contract\usp_HakeHr_Contract_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\Contract\usp_HakeHr_Contract_Update.sql" />
+    <Build Include="dbo\Stored Procedures\Employee\usp_HakeHr_Employee_AddContract.sql" />
+    <Build Include="dbo\Stored Procedures\Employee\usp_HakeHr_Employee_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\Employee\usp_HakeHr_Employee_GetById.sql" />
+    <Build Include="dbo\Stored Procedures\Employee\usp_HakeHr_Employee_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\Employee\usp_HakeHr_Employee_List.sql" />
+    <Build Include="dbo\Stored Procedures\Employee\usp_HakeHr_Employee_Update.sql" />
+    <Build Include="dbo\Stored Procedures\Employee\usp_HakeHr_Employee_GetByTeamId.sql" />
+    <Build Include="dbo\Stored Procedures\Organization\usp_HakeHr_Organization_Update.sql" />
+    <Build Include="dbo\Stored Procedures\Organization\usp_HakeHr_Organization_List.sql" />
+    <Build Include="dbo\Stored Procedures\Organization\usp_HakeHr_Organization_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\Organization\usp_HakeHr_Organization_GetById.sql" />
+    <Build Include="dbo\Stored Procedures\Organization\usp_HakeHr_Organization_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\Organization\usp_HakeHr_Organization_AddTeam.sql" />
+    <Build Include="dbo\Stored Procedures\Team\usp_HakeHr_Team_AddEmployee.sql" />
+    <Build Include="dbo\Stored Procedures\Team\usp_HakeHr_Team_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\Team\usp_HakeHr_Team_GetById.sql" />
+    <Build Include="dbo\Stored Procedures\Team\usp_HakeHr_Team_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\Team\usp_HakeHr_Team_List.sql" />
+    <Build Include="dbo\Stored Procedures\Team\usp_HakeHr_Team_Update.sql" />
+    <Build Include="dbo\Stored Procedures\Team\usp_HakeHr_Team_GetByOrganizationId.sql" />
+    <Build Include="dbo\Stored Procedures\Employee\usp_HakeHr_Employee_BulkDelete.sql" />
+    <Build Include="dbo\User Types\IdList.sql" />
+    <Build Include="dbo\Stored Procedures\Organization\usp_HakeHr_Organization_BulkDelete.sql" />
+    <Build Include="dbo\Stored Procedures\Team\usp_HakeHr_Team_BulkDelete.sql" />
+    <Build Include="dbo\Stored Procedures\Contract\usp_HakeHr_Contract_BulkDelete.sql" />
+    <Build Include="dbo\Tables\Attachment.sql" />
+    <Build Include="dbo\Tables\EmployeeAttachment.sql" />
+    <Build Include="dbo\Tables\ContractAttachment.sql" />
+    <Build Include="dbo\Tables\TeamAttachment.sql" />
+    <Build Include="dbo\Tables\OrganizationAttachment.sql" />
+    <Build Include="dbo\User Types\NameList.sql" />
+    <Build Include="dbo\Stored Procedures\Attachment\usp_HakeHr_Attachment_BulkInsert.sql" />
+    <Build Include="dbo\Stored Procedures\Attachment\usp_HakeHr_Attachment_DeleteFromOwner.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HakeHR.SqlDatabase.publish.xml" />
+    <None Include="PublishLocations\HakeHR.Local.publish.xml" />
+    <None Include="PublishLocations\HakeHR.Prod.publish.xml" />
+  </ItemGroup>
+</Project>

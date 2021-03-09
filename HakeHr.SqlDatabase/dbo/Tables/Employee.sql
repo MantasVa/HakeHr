@@ -1,0 +1,15 @@
+﻿CREATE TABLE [dbo].[Employee]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	[Firstname] NVARCHAR(50) NOT NULL,
+	[Lastname] NVARCHAR(50) NOT NULL,
+	[Email] NVARCHAR(100),
+	[Birthdate] DATE NOT NULL,
+	[Address] NVARCHAR(200),
+	[PhoneNumber] NVARCHAR(15) NOT NULL,
+	[Certifications] NVARCHAR(1000),
+	[PhotoPath] NVARCHAR(125),
+	[CreatedAt] SMALLDATETIME NOT NULL DEFAULT(GETDATE()),
+	[UpdatedAt] SMALLDATETIME NULL,
+	[ManagerId] INT FOREIGN KEY REFERENCES Employee(Id) NULL
+)

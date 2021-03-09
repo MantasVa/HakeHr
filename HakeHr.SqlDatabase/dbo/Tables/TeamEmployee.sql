@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[TeamEmployee]
+(
+	PRIMARY KEY([EmployeeId], [TeamId]),
+	[EmployeeId] INT FOREIGN KEY REFERENCES [Employee](Id),
+	[TeamId] INT FOREIGN KEY REFERENCES [Team](Id),
+	[CreatedAt] SMALLDATETIME NOT NULL DEFAULT(GETDATE()),
+	[UpdatedAt] SMALLDATETIME NULL
+)
