@@ -9,4 +9,4 @@ Uses common libraries like Serilog, Polly, Mapster, Mediatr, Autofac, Swashbuckl
 Uses ADO.NET for database access.
 Built on ASP.NET Framework 4.7.2.
 
-Originally developed https://dev.azure.com/aidanas933/HakeHr
+Originally developed using Azure Devops( https://dev.azure.com/aidanas933/HakeHr)
